@@ -109,55 +109,63 @@ python train_slope_with_preference.py --task=go2_slope_pref --log_root logs/go2_
 python test_flat_locomotion_with_preference.py --task=gpt_go2 --num_envs 2 --rl_device cuda:0 \
 --sim_device cuda:0 --load_run ckpt --checkpoint=3999 --log_root logs/go2_flat --headless --record --test_direct forward
 ```
-![Flat](https://github.com/user-attachments/assets/28c8a6a8-8df0-4705-9695-45f4dc95fc5f)
+![Flat](test_videos/flat_forward.gif)
 
 2. Example of testing the go2 robot for backflip
 ```
 python test_backflip_normal.py --task=go2_backflip --num_envs 2 --rl_device cuda:7 --sim_device cuda:7 \ 
 --load_run <backflip_model_path> --checkpoint=5000 --log_root logs/go2_backflip --headless --record --random_in_air 0
 ```
+![Flat](test_videos/backflip.gif)
 
 3. Example of testing the go2 robot for bounding
 ```
 python test_bounding_with_preference.py --task=gpt_go2 --num_envs 2 --rl_device cuda:0 --sim_device cuda:0 \
 --load_run ckpt --checkpoint=5599 --log_root logs/go2_bounding --headless --record --test_direct forward
 ```
+![Flat](test_videos/bounding.gif)
 
 4. Example of testing the go2 robot for fast cadence
 ```
 python test_cadence_with_preference.py --task=gpt_go2 --num_envs 2 --rl_device cuda:0 --sim_device cuda:0 \
 --load_run fast_ckpt --checkpoint=4999 --log_root logs/go2_cadence --headless --record --test_direct forward
 ```
+![Flat](test_videos/fast_cadence.gif)
 
 5. Example of testing the go2 robot for slow cadence
 ```
 python test_cadence_with_preference.py --task=gpt_go2 --num_envs 2 --rl_device cuda:0 --sim_device cuda:0 \
 --load_run slow_ckpt --checkpoint=4999 --log_root logs/go2_cadence --headless --record --test_direct forward
 ```
+![Flat](test_videos/slow_cadence.gif)
 
 6. Example of testing the go2 robot for stairs
 ```
 python test_stairs_with_preference.py --task=go2_stairs --num_envs 2 --rl_device cuda:0 --sim_device cuda:0 \
 --load_run ckpt --checkpoint=4999 --log_root logs/go2_stairs --test_direct forward --terrain pyramid_stairs --headless --record
 ```
+![Flat](test_videos/stairs.gif)
 
 7. Example of testing the go2 robot for obstacles
 ```
 python test_obstacles_with_preference.py --task=go2_terrain --log_root logs/go2_obstacles --rl_device cuda:0 --sim_device cuda:0 \
 --reward_module_name go2obstacles_prompt.reward.go2_forward_reward --terrain discrete_obstacles --headless --checkpoint 1999 --load_run ckpt --silence --record --test_direct forward
 ```
+![Flat](test_videos/obstacles.gif)
 
 8. Example of testing the go2 robot for slope
 ```
 python test_slope_with_preference.py --task=go2_terrain --log_root logs/go2_slope --rl_device cuda:0 --sim_device cuda:0 \
 --reward_module_name go2slope_prompt.reward.go2_forward_reward --terrain pyramid_sloped --headless --checkpoint 1999 --load_run ckpt --silence --record --test_direct forward
 ```
+![Flat](test_videos/slope.gif)
 
 9. Example of testing the go2 robot for wave
 ```
 python test_wave_with_preference.py --task=go2_terrain --log_root logs/go2_wave --rl_device cuda:0 --sim_device cuda:0 \
 --reward_module_name go2wave_prompt.reward.go2_forward_reward --terrain wave --headless --checkpoint 1499 --load_run ckpt --silence --record --test_direct forward
 ```
+![Flat](test_videos/wave.gif)
 
 ## Manipulation
 
