@@ -52,7 +52,7 @@ def play(args):
     policy = ppo_runner.get_inference_policy(device=env.device)
 
     if args.test_direct == "forward":  # [1.5, 0.0, 0.0, 0.0]
-        env.commands = torch.tensor([1.5, 0.0, 0.0, 0.0], device=env.device).repeat(env.num_envs, 1)
+        env.commands = torch.tensor([1.0, 0.0, 0.0, 0.0], device=env.device).repeat(env.num_envs, 1)
     elif args.test_direct == "backward":
         env.commands = torch.tensor([-0.9, 0.0, 0.0, 0.0], device=env.device).repeat(env.num_envs, 1)
     elif args.test_direct == "left":
