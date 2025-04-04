@@ -109,6 +109,7 @@ python train_slope_with_preference.py --task=go2_slope_pref --log_root logs/go2_
 python test_flat_locomotion_with_preference.py --task=gpt_go2 --num_envs 2 --rl_device cuda:0 \
 --sim_device cuda:0 --load_run ckpt --checkpoint=3999 --log_root logs/go2_flat --headless --record --test_direct forward
 ```
+![Flat](https://github.com/generalroboticslab/LAPP/blob/main/test_videos/flat_forward_right3999.mp4)
 
 2. Example of testing the go2 robot for backflip
 ```
