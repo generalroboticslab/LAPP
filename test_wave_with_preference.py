@@ -137,7 +137,7 @@ def play(args):
         print('Exported policy as jit script to: ', path)
 
     # env.max_episode_length = 600  # originally 1000
-    env.max_episode_length = 400
+    env.max_episode_length = 300
     print('max_episode_length: ', env.max_episode_length)
     for i in range(int(env.max_episode_length)):  # 10 * int(env.max_episode_length)
         print(env.base_pos[0].cpu().numpy())

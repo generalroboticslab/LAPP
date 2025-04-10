@@ -110,10 +110,13 @@ python -m pip install numpy==1.21.0
 - Add you OpenAI API key to the api_key/openai_api_key.txt file
 
 ## training
+
+![ps_teaser](figures/training_speed.png)
+
 1. Example of training the go2 robot for flat ground locomotion
 ```
 python train_flat_locomotion_with_preference.py --task gpt_go2 --log_root logs/go2_flat --rl_device cuda:0 \ 
---sim_device cuda:0 --max_iterations 3000 --reward_module_name flat_pref_prompt.reward.go2_forward_reward --headless --save_pairs --pref_scale 1.0
+--sim_device cuda:0 --max_iterations 2000 --reward_module_name flat_pref_prompt.reward.go2_forward_reward --headless --save_pairs --pref_scale 1.0
 ```
 
 2. Example of training the go2 robot for jumping high
@@ -173,7 +176,7 @@ python train_slope_with_preference.py --task=go2_slope_pref --log_root logs/go2_
 1. Example of testing the go2 robot for flat ground locomotion
 ```
 python test_flat_locomotion_with_preference.py --task=gpt_go2 --num_envs 2 --rl_device cuda:0 \
---sim_device cuda:0 --load_run ckpt --checkpoint=3999 --log_root logs/go2_flat --headless --record --test_direct forward
+--sim_device cuda:0 --load_run ckpt --checkpoint=1999 --log_root logs/go2_flat --headless --record --test_direct forward
 ```
 ![Flat](test_videos/flat_forward.gif)
 
@@ -222,7 +225,7 @@ python test_obstacles_with_preference.py --task=go2_terrain --log_root logs/go2_
 8. Example of testing the go2 robot for slope
 ```
 python test_slope_with_preference.py --task=go2_terrain --log_root logs/go2_slope --rl_device cuda:0 --sim_device cuda:0 \
---reward_module_name go2slope_prompt.reward.go2_forward_reward --terrain pyramid_sloped --headless --checkpoint 1999 --load_run ckpt --silence --record --test_direct forward
+--reward_module_name go2slope_prompt.reward.go2_forward_reward --terrain pyramid_sloped --headless --checkpoint 1899 --load_run ckpt --silence --record --test_direct forward
 ```
 ![Flat](test_videos/slope.gif)
 
