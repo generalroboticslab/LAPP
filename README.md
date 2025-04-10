@@ -9,12 +9,78 @@
 <br>
 Duke University
 <br>
+![ps_teaser](figures/lapp_teaser.png)
+
+[//]: # (<p style="text-align:center;">)
+[//]: # (  <img src="figures/lapp_teaser.png" alt="ps_teaser" width="1200"/>)
+[//]: # (</p>)
 
 ## Content
 
 - [Installation](#installation)
 - [Training](#training)
 - [Testing](#testing)
+
+## Project Structure
+```
+├── api_key
+│   ├── openai_api_key.txt                                # Put your OpenAI API key here
+├── custom_env                                            # The 'robot' files define different environment, and the 'config' files define the corresponding config parameters
+├── figures                                               # Figures for the readme file
+├── flat_pref_prompt                                      # All the 'prompt' folders have rewards and prompts for different tasks
+│   ├── reward                                            # The reward of this task
+│   ├── initialize_system.txt                             # The initialization prompt of this task
+│   ├── user_chat_template.txt                            # A template for filling in data and chatting with the LLM    
+├── go2backflip_prompt
+│   ├── reward
+│   ├── backflip_initialize_system.txt
+│   ├── user_chat_template.txt
+├── go2bounding_prompt
+│   ├── reward
+│   ├── bounding_initialize_system.txt
+│   ├── user_chat_template.txt
+├── go2fast_prompt
+│   ├── reward
+│   ├── fast_cadence_initialize_system.txt
+│   ├── user_chat_template.txt
+├── go2obstacles_prompt
+│   ├── reward
+│   ├── obstacles_forward_initialize_system.txt
+├── go2slope_prompt
+│   ├── reward
+│   ├── slope_forward_initialize_system.txt
+├── go2slow_prompt
+│   ├── reward
+│   ├── slow_cadence_initialize_system.txt
+│   ├── user_chat_template.txt
+├── go2stairs_prompt
+│   ├── reward
+│   ├── stairs_forward_initialize_system.txt
+├── go2wave_prompt
+│   ├── reward
+│   ├── wave_forward_initialize_system.txt
+├── logs                                                  # Store the checkpoints of the training process   
+├── repo                                                  # Dependency packages of this project. Some are modified from the official versions
+├── test_videos                                           # The videos of the tasks. Rendered on the readme.md file
+├── README.md
+├── test_backflip_normal.py                               # Test the trained policy for backflip
+├── test_bounding_with_preference.py
+├── test_cadence_with_preference.py
+├── test_flat_locomotion_with_preference.py
+├── test_obstacles_with_preference.py
+├── test_slope_with_preference.py
+├── test_stairs_with_preference.py
+├── test_wave_with_preference.py
+├── train_backflip_light.py                               # Trained policy for backflip. The robot weight is lighter than realistic for easier exploration.
+├── train_backflip_light_with_preference.py
+├── train_bounding_with_preference.py
+├── train_cadence_with_preference.py
+├── train_flat_locomotion_with_preference.py
+├── train_obstacles_with_preference.py
+├── train_slope_with_preference.py
+├── train_stairs_locomotion_with_preference.py
+├── train_wave_with_preference.py
+```
 
 ## installation
 - Install the packages below.
